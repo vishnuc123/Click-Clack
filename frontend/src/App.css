@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s infinite;
+}
+.background{
+  background-color: #0f222d ;
+}
+.wpm{
+  color: rgb(247, 240, 220);
+}
