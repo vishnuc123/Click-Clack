@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./assets/images/typing.png";
 import audiosrc from "./assets/audio/keyboard-typing-one-short-1-292590.mp3"
 import backSpace from "./assets/audio/mixkit-hard-single-key-press-in-a-laptop-2542.wav"
+import spaceBar from "./assets/audio/acer-computer-spacebar-38301.mp3"
 import { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
@@ -116,7 +117,11 @@ const App = () => {
   if (inputValue.length < previousValue.length) {
     let audio = new Audio(backSpace);
     audio.play();
-  } else {
+
+  }else if (e.nativeEvent.inputType === 'insertText' && e.nativeEvent.data === ' ') {
+    let audio = new Audio(spaceBar); 
+    audio.play(); 
+  }else {
     
     let audio = new Audio(audiosrc);
     audio.play();
